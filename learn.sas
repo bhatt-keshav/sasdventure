@@ -84,21 +84,6 @@ What do these do?
 %put sysin: %sysfunc(getoption(sysin));
 
 
-/* EAD Methodology */
-proc sql;
-  select 
-  nrln                  ,
-  position_dt, default_dt	     ,                   
-  limiet_amt	        ,
-  saldo_amt	          ,
-  bedrag_achter           ,
-  ACC_OUTSTANDING_TOTAL_AMT ,
-  ndefault_jn_ind	            ,
-  eam                           ,
-  ead_realised	                 
-  from ead_table where nrln = 260565555 AND ACC_STATUS_CD = 'ACTIVE' and ead_realised NE 0 and ndefault_jn_ind NE 1;
-  run;
-  
   /* Compare 2 datasets */
 proc compare base=base-dataset
 compare=comparison-dataset;
