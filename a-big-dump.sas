@@ -115,11 +115,11 @@ run;
 /* ###################################################################
 						Copying A Dataset				
 ####################################################################*/
-libname keshav "/opt/repo/fris/userdata/CreditRisk/Development/Users/Keshav";
+libname keshav "/repo/userdata/Keshav";
 %macro store_locally;
 %do months = 6 %to 36 %by 6;
-	DATA keshav.mon_non_perf&months.;
-	set mon_non_perf&months.;	
+	DATA keshav.a;
+	set work.a;	
 RUN;
 	%end;
 %mend;
